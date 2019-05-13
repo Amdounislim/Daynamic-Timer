@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Timer from './Timer'
 
+let t=20586548;
+let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+let secs = Math.floor((t % (1000 * 60)) / 1000);
+if (hours<10) {hours="0"+hours}
+if (mins<10) {mins="0"+mins}
+if (secs<10) {secs="0"+secs}
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Timer />
     </div>
   );
 }
